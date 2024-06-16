@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="font-[Raleway] ">
+    <header class="pt-5 bg-[#225b73]">
+        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+            <div>
+                <img class="w-32 cursor-pointer" src="../../public/Resources/KREA.png">
+            </div>
+            <div
+                class="nav-links duration-500 md:static absolute bg-[#225b73] text-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Home</a> 
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Nosotros</a> 
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Servicios</a> 
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Convocatorias</a> 
+                    </li>
+
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Blog</a> 
+                    </li>
+
+                    <li >
+                        <a  class=" font-bold hover:text-gray-500 text-[#41BBB1]" href="#">Contacto</a> 
+                    </li>
+                </ul>
+            </div>
+            
+        </nav>
+    </header>
+
+
+
+    <script>
+        const navLinks = document.querySelector('.nav-links')
+        function onToggleMenu(e){
+            e.name = e.name === 'menu' ? 'close' : 'menu'
+            navLinks.classList.toggle('top-[9%]')
+        }
+    </script>
+</body>
+
+</html>
