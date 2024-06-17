@@ -1,14 +1,31 @@
 ---
 import ContentMedia from "./ContentMedia.astro";
-let img_path = "../../public/Resources/KREA.png"
+let img_path = "../../public/Resources/main-content1.svg"
 ---
-
-<ContentMedia imgSrc={img_path}>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo est ut egestas vehicula</p>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-
+<html>
+<head>
+  <link rel="stylesheet" href="./Styles/GlobalCss.css"> 
+</head>
+<ContentMedia class="media-c" imgSrc = {img_path} >
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo est ut egestas vehicula Sed commodo est ut egestas vehicula</p>
+  <ul>
+  <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+</ul>
   </ContentMedia>
-
+  </html>
 --
+
+<style>
+  ul {
+    margin: 30px;
+  }
+  ul li {
+    margin: 10px;
+  }
+  .media-c{
+    font-size: 45px;
+    font-weight: 700; 
+  }
+</style>

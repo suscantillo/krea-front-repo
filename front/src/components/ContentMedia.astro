@@ -1,16 +1,47 @@
-
 ---
-const { imgSrc, reverseImg = false } = Astro.props
+const { imgSrc, reverseImg = false } = Astro.props;
 ---
 
 <section class="my-64">
+  <link rel="stylesheet" href="./Styles/GlobalCss.css"> 
   <div class="container">
-    <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-      {!reverseImg ? <img class="rounded-lg" src={imgSrc} alt="Descripción de la imagen" /> : ''}
-      <div class="space-content flex flex-col justify-center">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center"> 
+      {!reverseImg ? <div class="img-container"><img class="rounded-lg my-64" src={imgSrc} alt="Descripción de la imagen" /></div> : ''}
+      <div class="space-content flex flex-col justify-center p-4">
         <slot />
       </div>
-      {reverseImg ? <img class="rounded-lg" src={imgSrc} alt="Descripción de la imagen" /> : ''}
+      {reverseImg ? <div class="img-container"><img class="rounded-lg my-64" src={imgSrc} alt="Descripción de la imagen" /></div> : ''}
     </div>
   </div>
 </section>
+
+<style>
+  section {
+    margin-bottom: 0px;
+  }
+  .space-content {
+    list-style-type: none;  
+    font-family: 'Raleway', sans-serif; 
+    font-size: 30px; 
+    font-weight: 500; 
+    color: #333; 
+    padding: 10px;
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  img {
+    margin: 0;
+    padding: 0;
+    max-width: 100%; 
+    height: auto; 
+  }
+
+  .grid {
+    align-items: center; 
+  }
+</style>
