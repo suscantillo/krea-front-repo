@@ -26,8 +26,8 @@
 </head>
 
 <body class="font-[Raleway] ">
-    <header class="pt-5 bg-[#225b73]">
-        <nav class="flex justify-between items-center w-[92%]  mx-auto fixed">
+    <header class="pt-2.5 pb-2.5  bg-[#225b73]">
+        <nav class="flex justify-between items-center w-[92%]  mx-auto">
             <div class="logo">
                 <img class="w-32 cursor-pointer" src="../../public/Resources/KREA.png" alt="Logo Krea">
             </div>
@@ -70,13 +70,14 @@
         const menuIcon = document.getElementById('menuIcon'); // Cambia 'menuButton' por 'menuIcon'
         const navLinks = document.querySelector('.nav-links');
 
-        function toggleMenu() { // Cambia 'onToggleMenu' por 'toggleMenu'
-            this.textContent = this.textContent === 'menu-outline'? 'close-outline' : 'menu-outline'; // Usa 'this' para referirse al elemento que disparó el evento
+        function toggleMenu(event) {
+            event.target.name = event.target.name === 'menu-outline'? 'close-outline' : 'menu-outline';
             navLinks.classList.toggle('top-[9%]');
         }
 
         menuIcon.addEventListener('click', toggleMenu); // Cambia 'onToggleMenu' por 'toggleMenu'
-      </script>
+        
+    </script>
 
 </body>
 
