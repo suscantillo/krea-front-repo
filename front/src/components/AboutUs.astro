@@ -30,7 +30,7 @@
                 left: 0;
                 width: 100%;
                 height: 32vh; /* Asegúrate de que la altura coincida con la de.bg */
-                background-color: rgba(0, 0, 0, 0.4);
+                background-color: rgba(0, 0, 0, 0.25);
             }
 
         .info {
@@ -81,27 +81,62 @@
         .content {
             display: flex;
             flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
-            justify-content: space-between; /* Distribuye el espacio restante uniformemente entre los elementos */
-            padding: 0px 150px 0px 150px; /* Espacio alrededor del contenido para mejorar la legibilidad */
+            padding: 0px 70px 0px 70px; /* Espacio alrededor del contenido para mejorar la legibilidad */
         }
 
     /* Estilos para los elementos de contenido */
-        .content-info,
-        .content-animation {
+        .content-info {
             flex-basis: 100%; /* Toma todo el ancho disponible por defecto */
-            padding: 20px; /* Espacio alrededor del contenido para mejorar la legibilidad */
+            padding: 20px 0px 20px 70px; /* Espacio alrededor del contenido para mejorar la legibilidad */
             display: flex;
             flex-direction: column; /* Apila los elementos verticalmente */
             align-items: center; /* Centra los elementos horizontalmente */
             justify-content: center; /* Centra los elementos verticalmente */
-            padding: 20px; /* Espacio alrededor del contenido para mejorar la legibilidad */
         }
 
-        .content-info p {
+        .content-animation{
+            flex-basis: 100%; /* Toma todo el ancho disponible por defecto */
+            padding: 20px 20px 20px 20px ; /* Espacio alrededor del contenido para mejorar la legibilidad */
+            display: flex;
+            flex-direction: column; /* Apila los elementos verticalmente */
+            align-items: center; /* Centra los elementos horizontalmente */
+            justify-content: center; /* Centra los elementos verticalmente */
+        }
+        
+
+        @media (max-width: 767px) {
+            .content-info {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        .content-info li {
             font-family: 'Raleway', sans-serif;
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: 400;
             color: #225b73;
+            margin-bottom: 10px;
+        }
+
+        .content-info ul {
+            list-style-type: none; /* Quita las viñetas predeterminadas */
+            padding: 0; /* Elimina el relleno predeterminado del navegador */
+        }
+
+        .content-info li::before {
+            content: ''; /* Contenido vacío para el pseudo-elemento */
+            display: inline-block; /* Hace que el pseudo-elemento se comporte como un bloque en línea */
+            width: 10px; /* Ancho de la viñeta circular */
+            height: 10px; /* Altura de la viñeta circular */
+            margin-right: 10px; /* Espacio a la derecha de la viñeta */
+            background-color: #41bbb1; /* Color de fondo de la viñeta */
+            border-radius: 50%; /* Rellena el pseudo-elemento para hacerlo circular */
+            vertical-align: middle; /* Alinea verticalmente el centro de la viñeta con el texto */
+        }
+
+        .content-info span {
+            vertical-align: middle; /* Alinea verticalmente el texto con la viñeta */
         }
 
         .content-animation {
@@ -126,23 +161,95 @@
         }
 
         /* Media query para pantallas medianas (tablets) */
-        @media (min-width: 769px) and (max-width: 1024px) {
+        @media (min-width: 773px) and (max-width: 1024px) {
             .content{
-                padding: 20px;
+                padding: 0px 20px 0px 20px;
             }
 
-            .content-info,
-            .content-animation {
+            .content-info {
                     flex-basis: 40%; /* Divide el espacio en dos partes iguales para pantallas medianas */
                 }
+
+            
+            .content-animation{
+                flex-basis: 60%;
+            }
+            
         }
 
         /* Media query para pantallas grandes */
         @media (min-width: 1025px) {
             .content-info,
             .content-animation {
-                    flex-basis: 45%; /* Ajusta el tamaño según sea necesario para pantallas grandes */
+                    flex-basis: 50%; /* Ajusta el tamaño según sea necesario para pantallas grandes */
                 }
+        }
+
+        .content-estadisticas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0px 70px 50px 70px; /* Padding original */
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) { /* Ajusta la consulta de medios para tablets */
+            .content-estadisticas {
+                padding: 0px 20px 50px 20px; /* Padding para tablets */
+            } 
+            
+        }
+
+        @media (max-width: 767px) {
+            .content-estadisticas {
+                padding: 0px 20px 50px 20px; /* Reduce el padding para pantallas pequeñas */
+            }
+        }
+
+        .estadisticas {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .estadisticas h1 {
+            font-family: 'Raleway';
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #41bbb1;
+            margin: 0;
+        }
+
+        .estadisticas p {
+            font-family: 'Raleway';
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #225b73;
+            padding: 0px 40px 0px 40px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .estadisticas p {
+                padding: 0px 20px 50px 20px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .content-estadisticas div {
+                width: calc(33.333% - 2rem);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .content-estadisticas div {
+                width: calc(33.333% - 2rem);
+            }
         }
 
         .patternpad {
@@ -154,6 +261,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .patternpad::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40vh; /* Asegúrate de que la altura coincida con la de .patternpad */
+            background-color: rgba(0, 0, 0, 0.25);
         }
 
         .info-patternpad {
@@ -188,6 +305,10 @@
                 height: 24vh; /* Reduce la altura de la imagen de fondo */
             }
 
+        .patternpad::before {
+                height: 24vh; /* Asegúrate de que la altura coincida con la de .patternpad */
+            }
+
         .info-patternpad {
                 padding: 10px; /* Reduce el padding para adaptarse mejor a pantallas pequeñas */
             }
@@ -205,6 +326,10 @@
         @media (min-width: 769px) and (max-width: 1024px) {
         .patternpad {
                 height: 36vh; /* Ajusta la altura de la imagen de fondo para pantallas medianas */
+        }
+
+        .patternpad::before {
+                height: 36vh; /* Asegúrate de que la altura coincida con la de .patternpad */
             }
 
         .info-patternpad {
@@ -320,7 +445,7 @@
 
 
         .icon i{
-            font-size: 150px;
+            font-size: 120px;
             color: #fff;
             transition: all 400ms cubic-bezier(0.5,0,0,1);
         }
@@ -408,6 +533,120 @@
         .c4:hover .icon i{
             color: #fff;
         }
+
+
+        /*SLIDER*/
+
+        .title-slider {
+            text-align: center;
+            padding: 20px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            max-width: 1140px;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .divider-column {
+            flex: 1;
+            width: 25%;
+        }
+
+        .divider {
+            width: 100%;
+            border-top: 1px solid #225b7369;
+        }
+
+        .title-column {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            padding: 30px;
+        }
+
+        .title-column h1 {
+            color: #41bbb1;
+            font-size: 2.0em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+        .title-column h1 {
+                font-size: 32px;
+                margin-top: 40px;
+            }
+
+        .sup {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 20px 0px 20px 0px;
+            }
+
+        .inf {
+                display: none;
+            }
+        }
+
+        .slider {
+            width: 75vw;
+            height: auto;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider .slide-track {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            -webkit-animation: scroll 40s linear infinite;
+            width: calc(200px * 18);
+        }
+
+        .slider .slide {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+        }
+
+        .slider .slide img {
+            width: 100%;
+        }
+
+        @keyframes scroll {
+            0% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+            100% {
+                -webkit-transform: translateX(calc(-200px * 9));
+                transform: translateX(calc(-200px * 9));
+            }
+        }
+
+        .slider-content .content-estadisticas{
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
                 
 
     </style>
@@ -423,12 +662,32 @@
 
     <div class="content">
         <div class="content-info">
-            <p>Especializados en la creación de modelos de negocio exitosos.</p>
-            <p>Dinamizamos los ecosistemas empresariales a través de la captación de recursos de cofinanciación.</p>
+            <ul>
+        <li><span>Especializados en la creación de modelos de negocio exitosos.</span></li>
+        <li><span>Dinamizamos los ecosistemas empresariales a través de la captación de recursos de cofinanciación.</span></li>
+        <li><span>Desarrollamos una metodología de búsqueda de recursos inteligentes.</span></li>
+    </ul>
         </div>
 
         <div class="content-animation">
             <lottie-player src="https://lottie.host/722cc8f9-cfe8-47b2-becc-beaabf782814/uAHfmqW5ot.json" background="#ffffff" speed="1" style="width: 400px; height: 400px" loop autoplay direction="1" mode="normal"></lottie-player>
+        </div>
+    </div>
+
+    <div class="content-estadisticas">
+        <div class="estadisticas">
+            <h1>+8</h1>
+            <p>Años de experiencia</p>
+        </div>
+
+        <div class="estadisticas">
+            <h1>90%</h1>
+            <p>Ejecución</p>
+        </div>
+
+        <div class="estadisticas">
+            <h1>+494</h1>
+            <p>Mil millones de recursos aprobados</p>
         </div>
     </div>
 
@@ -489,8 +748,102 @@
                     
                 </div>
             </div>
-
         
+        </div>
+
+    </div>
+
+    <div class="slider-content">
+        <section class="title-slider">
+            <div class="container">
+                <div class="column divider-column sup">
+                    <div class="divider"></div>
+                </div>
+                <div class="column title-column">
+                    <h1>Te apoyamos en la búsqueda de capital inteligente para el sector público y privado</h1>
+                </div>
+                <div class="column divider-column inf">
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bancoldex.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/minciencias.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/mincomercio.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/dnp.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bid.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/innpulsa.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/colombia_productiva.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bienestar-famiiar.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/cooperacion-espanola.png" alt="">
+                </div>
+                
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bancoldex.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/minciencias.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/mincomercio.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/dnp.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bid.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/innpulsa.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/colombia_productiva.png" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/bienestar-famiiar.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="../../public/resources/logos-slider/cooperacion-espanola.png" alt="">
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="content-estadisticas">
+            <div class="estadisticas">
+                <h1>203</h1>
+                <p>Cooperantes</p>
+            </div>
+    
+            <div class="estadisticas">
+                <h1>259</h1>
+                <p>Convocatorias</p>
+            </div>
+    
+            <div class="estadisticas">
+                <h1>30</h1>
+                <p>Billones en recursos</p>
+            </div>
         </div>
 
     </div>
