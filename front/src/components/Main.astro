@@ -1,78 +1,90 @@
 ---
 import ContentMedia from "./ContentMedia.astro";
-let img_path = "../../public/Resources/main-content1.svg"
+let img_path = "../../public/Resources/main-content1.svg";
 ---
+
 <html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./Styles/GlobalCss.css">
-  <style>
-    p {
-      font-size: 1.25rem;
-    }
-    ul {
-      margin: 1.875rem;
-      font-size: 1.25rem;
-    }
-    ul li {
-      margin: 0.625rem;
-    }
-    .media-c {
-      font-size: 0.625rem;
-      font-weight: 700;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/GlobalCss.css" />
+    <style>
+      body {
+        font-family: "Raleway";
+      }
 
-    @media (min-width: 600px) {
-      p, ul {
-        font-size: 1.5rem;
+      .cont {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
       }
-      ul {
-        margin: 2rem;
-      }
-      .media-c {
-        font-size: 0.75rem;
-      }
-    }
 
-    @media (min-width: 768px) {
-      p, ul {
-        font-size: 1.75rem;
+      .card {
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        flex: 1 1 200px;
+        max-width: 300px;
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
-      ul {
-        margin: 2.5rem;
-      }
-      .media-c {
-        font-size: 0.875rem;
-        flex-direction: row;
-        text-align: left;
-      }
-    }
 
-    @media (min-width: 1024px) {
-      p, ul {
-        font-size: 2rem;
+      .card:hover {
+        transform: scale(1.05);
       }
-      ul {
-        margin: 3rem;
+
+      .icon {
+        font-size: 50px;
+        color: #ff9900;
       }
-      .media-c {
-        font-size: 1rem;
+
+      h2 {
+        font-size: 18px;
+        color: #333;
+        margin: 20px 0;
       }
-    }
-  </style>
-</head>
+
+      a {
+        color: #ff9900;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .card {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+  
+  
 <body>
-  <ContentMedia class="media-c" imgSrc={img_path}>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo est ut egestas vehicula Sed commodo est ut egestas vehicula</p>
-    <ul>
-      <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-      <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-      <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-    </ul>
-  </ContentMedia>
+    <div class="cont">
+        <div class="card">
+            <div class="icon">&#9733;</div>
+            <h2>Establece ventajas competitivas</h2>
+        </div>
+        <div class="card">
+            <div class="icon">&#36;</div>
+            <h2>Accede a beneficios tributarios y regalías</h2>
+        </div>
+        <div class="card">
+            <div class="icon">&#9881;</div>
+            <h2>Gestiona y visibiliza la innovación en tu empresa</h2>
+        </div>
+        <div class="card">
+            <div class="icon">&#127942;</div>
+            <h2>Impulsa tu éxito empresarial</h2>
+        </div>
+    </div>
 </body>
 </html>
