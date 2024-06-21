@@ -1,15 +1,23 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro"
-import Hero from "../components/Hero.astro"
-import Convocatorias from "../components/Convocatorias.astro"
-import NavBar from "../components/NavBar.astro"
-import Footer from "../components/Footer.astro"
 import AboutUs from "../components/AboutUs.astro"
-import Services from "../components/Services.astro"
-import Servicios from "../components/Services.astro"
+import NavBar from '../components/NavBar.astro';
+import Hero from '../components/Hero.astro';
+import Main from '../components/Main.astro';
+import Separator from '../components/Separator.astro';
+import CallToAction from "../components/CallToAction.astro";
+import SubMain from "../components/SubMain.astro";
+import MainCards from "../components/MainCards.astro";
 ---
 
 <DefaultLayout>
-    <Hero />
+<Hero />
+<Main />
+<Separator/>
+<MainCards/>
+<SubMain/>
+<CallToAction/>
 </DefaultLayout>
+
+
 

@@ -1,0 +1,78 @@
+---
+import ContentMedia from "./ContentMedia.astro";
+let img_path = "../../public/Resources/main-content1.svg"
+---
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Styles/GlobalCss.css">
+  <style>
+    p {
+      font-size: 1.25rem;
+    }
+    ul {
+      margin: 1.875rem;
+      font-size: 1.25rem;
+    }
+    ul li {
+      margin: 0.625rem;
+    }
+    .media-c {
+      font-size: 0.625rem;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 600px) {
+      p, ul {
+        font-size: 1.5rem;
+      }
+      ul {
+        margin: 2rem;
+      }
+      .media-c {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      p, ul {
+        font-size: 1.75rem;
+      }
+      ul {
+        margin: 2.5rem;
+      }
+      .media-c {
+        font-size: 0.875rem;
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      p, ul {
+        font-size: 2rem;
+      }
+      ul {
+        margin: 3rem;
+      }
+      .media-c {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ContentMedia class="media-c" imgSrc={img_path}>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo est ut egestas vehicula Sed commodo est ut egestas vehicula</p>
+    <ul>
+      <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+      <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    </ul>
+  </ContentMedia>
+</body>
+</html>
