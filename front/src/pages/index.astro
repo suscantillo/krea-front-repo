@@ -8,16 +8,19 @@ import Separator from '../components/Separator.astro';
 import CallToAction from "../components/CallToAction.astro";
 import SubMain from "../components/SubMain.astro";
 import MainCards from "../components/MainCards.astro";
+import 'aos/dist/aos.css'; 
 ---
 
 <DefaultLayout>
-<Hero />
-<Main />
-<Separator/>
-<MainCards/>
-<SubMain/>
-<CallToAction/>
+  <Hero />
+  <Main data-aos="fade-in" data-aos-delay="300" />
+  <Separator />
+  <MainCards/>
+  <SubMain/>
+  <CallToAction />
+  <script> 
+    import AOS from "aos"; 
+    AOS.init(); 
+  </script>
 </DefaultLayout>
-
-
 

@@ -1,6 +1,7 @@
 ---
 import ContentMedia from "./ContentMedia.astro";
 let img_path = "../../public/Resources/main-content1.svg"
+import 'aos/dist/aos.css'; 
 ---
 <html lang="en">
 <head>
@@ -67,12 +68,16 @@ let img_path = "../../public/Resources/main-content1.svg"
 </head>
 <body>
   <ContentMedia class="media-c" imgSrc={img_path}>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo est ut egestas vehicula Sed commodo est ut egestas vehicula</p>
-    <ul>
+    <p data-aos="fade-in" data-aos-delay="300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo est ut egestas vehicula Sed commodo est ut egestas vehicula</p>
+    <ul data-aos="fade-in" data-aos-delay="300">
       <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
       <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
       <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
     </ul>
   </ContentMedia>
+  <script>
+    import AOS from 'aos';
+    AOS.init();
+  </script>
 </body>
 </html>

@@ -1,10 +1,11 @@
 ---
 import CardsContainer from "./CardsContainer.astro"
 import Card  from "./Card.astro"
+import 'aos/dist/aos.css'; 
 ---
-
+<body>
 <div class="flex flex-col items-center my-8">
-    <h1 class="text-center mb-4 text-5xl font-bold custom-text-color custom-font">Las cifras ratifican nuestro éxito</h1>
+    <h1 data-aos="fade-right" class="text-center mb-4 text-5xl font-bold custom-text-color custom-font p-4">Las cifras ratifican nuestro éxito</h1>
     <CardsContainer>
       <Card>
         <div slot="front">
@@ -28,6 +29,11 @@ import Card  from "./Card.astro"
       </Card>
     </CardsContainer>
 </div>
+<script>
+  import AOS from 'aos';
+  AOS.init();
+</script>
+<body/>
 
 
 <style>
