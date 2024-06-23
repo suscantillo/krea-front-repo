@@ -62,12 +62,32 @@ import 'aos/dist/aos.css';
     }
 
     .flip-card-back {
-        background-color: #ffffff;
+        background: linear-gradient(0deg, #225b73 0%, #59fef0 180%);
         color: white;
         transform: rotateY(180deg);
         z-index: 0;
     }
 
+
+    @keyframes color {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+        50% {
+            filter: hue-rotate(45deg);
+        }
+        100% {
+            filter: hue-rotate(0deg);
+        }
+    }
+
+    /* Media query para tarjetas grandes en pantallas grandes */
+    @media (min-width: 1024px) {
+        .lg\:flip-card-lg {
+            width: 450px;
+            height: 480px;
+        }
+    }
 
 </style>
 
