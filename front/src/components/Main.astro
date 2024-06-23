@@ -1,6 +1,7 @@
 ---
 import ContentMedia from "./ContentMedia.astro";
 let img_path = "../../public/Resources/main-content1.svg";
+import 'aos/dist/aos.css'; 
 ---
 
 <html lang="en">
@@ -65,30 +66,34 @@ let img_path = "../../public/Resources/main-content1.svg";
   
 <body>
     <div class="cont">
-        <div class="card">
+        <div data-aos="fade-right" data-aos-delay="300"  class="card">
             <div class="icon">
               <i class="fa-solid fa-check-double"></i>
             </div>
             <h2>Establece ventajas competitivas</h2>
         </div>
-        <div class="card">
+        <div data-aos="fade-down" data-aos-delay="300"  class="card">
             <div class="icon">
               <i class="fa-solid fa-sack-dollar"></i>
             </div>
             <h2>Accede a beneficios tributarios y regalías</h2>
         </div>
-        <div class="card">
+        <div data-aos="fade-left" data-aos-delay="300" class="card">
             <div class="icon">
               <i class="fa-solid fa-arrows-to-eye"></i>
             </div>
             <h2>Gestiona y visibiliza la innovación</h2>
         </div>
-        <div class="card">
+        <div data-aos="fade-up" data-aos-delay="300" class="card">
             <div class="icon">
               <i class="fa-solid fa-award"></i>
             </div>
             <h2>Impulsa tu éxito empresarial</h2>
         </div>
     </div>
+    <script>
+      import AOS from 'aos';
+      AOS.init();
+    </script>
 </body>
 </html>

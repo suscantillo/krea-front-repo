@@ -3,21 +3,30 @@ import ContentMedia from "./ContentMedia.astro";
 let img_path = "../../public/Resources/main-content2.svg"
 ---
 <html>
+  <body>
 <head>
   <link rel="stylesheet" href="./Styles/GlobalCss.css"> 
 </head>
 <ContentMedia class="media-c" imgSrc = {img_path} >
-    <h1 class="ml-4 mb-4 text-6xl font-bold  custom-font-title ">Servicios</h1>
+    <h2 class="ml-4 mb-4   custom-font-title ">Servicios</h2>
   <ul>
   <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
   <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
   <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 </ul>
   </ContentMedia>
+  <script>
+    import AOS from 'aos';
+    AOS.init();
+  </script>
+</body>
   </html>
 --
 
 <style>
+  h2 {
+    font-size: 2em;
+  }
   ul {
     margin: 30px;
   }
@@ -30,6 +39,6 @@ let img_path = "../../public/Resources/main-content2.svg"
   }
   .custom-font-title{
         color: var(--second-color);
-        font-weight: 900;
+        font-weight: 700;
     }
 </style>

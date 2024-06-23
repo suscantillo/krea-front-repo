@@ -1,21 +1,28 @@
 ---
+import 'aos/dist/aos.css'; 
 ---
-<div class="flip-card lg:flip-card-lg">
-    <div class="flip-card-inner">
-        <div class="flip-card-front bg-white text-black">
-            <slot name="front"></slot>
+<body>
+<div data-aos="flip-left" data-aos-delay="500" class="flip-card lg:flip-card-lg">
+    <div data-aos="flip-left" data-aos-delay="500" class="flip-card-inner">
+        <div   class="flip-card-front bg-white text-black">
+            <slot data-aos="fade-right" name="front"></slot>
         </div>
         <div class="flip-card-back bg-white text-white rotate">
             <slot name="back"></slot>
         </div>
     </div>
 </div>
+<script>
+	import AOS from 'aos';
+	AOS.init();
+  </script>
+<body/>
 
 <style>
     .flip-card {
         background-color: transparent;
-        width: 370px;
-        height: 390px;
+        width: 295px;
+        height: 280px;
         perspective: 1000px;
         margin: 20px;
     }
@@ -61,6 +68,7 @@
         z-index: 0;
     }
 
+
     @keyframes color {
         0% {
             filter: hue-rotate(0deg);
@@ -80,5 +88,6 @@
             height: 480px;
         }
     }
+
 </style>
 

@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/DefaultLayout.astro';
+
+const STRAPI_URL = 'http://localhost:1337';
+const response = await fetch(`${STRAPI_URL}/api/posts?populate=*`);
+const { data } = await response.json();
+
+const routes = data.map(post => {
+  const categorySlug = post.attributes.category?.data?.attributes?.Slug || 'uncategorized';
+  const postSlug = post.attributes.slug;
+  return `/${categorySlug}/${postSlug}`;
+});
+---
+
+<Layout title="Debug Routes">
+  <h1>Rutas Estáticas Generadas</h1>
+  <ul>
+    {routes.map(route => (
+      <li><a href={route}>{route}</a></li>
+    ))}
+  </ul>
+</Layout>

@@ -1,22 +1,13 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro"
-import AboutUs from "../components/AboutUs.astro"
-import NavBar from '../components/NavBar.astro';
-import Hero from '../components/Hero.astro';
-import Main from '../components/Main.astro';
-import Separator from '../components/Separator.astro';
-import CallToAction from "../components/CallToAction.astro";
-import SubMain from "../components/SubMain.astro";
-import MainCards from "../components/MainCards.astro";
+import Home from "../components/Home.astro"
+import LoadingBar from "../components/LoadingBar.astro";
+let isLoading = true;
 ---
 
 <DefaultLayout>
-<Hero />
-<Main />
-<Separator/>
-<MainCards/>
-<SubMain/>
-<CallToAction/>
+
+  <Home />
 </DefaultLayout>
 
 
