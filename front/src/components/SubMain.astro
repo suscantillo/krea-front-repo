@@ -7,25 +7,39 @@ let img_path = "../../public/Resources/main-content2.svg"
 <head>
   <link rel="stylesheet" href="./Styles/GlobalCss.css"> 
 </head>
-<ContentMedia class="media-c" imgSrc = {img_path} >
-    <h2 class="ml-4 mb-4   custom-font-title ">Servicios</h2>
+<ContentMedia class="media-c">
+    <h2 class="ml-4 mb-4 custom-font-title" data-aos="fade-in" data-aos-delay="500">Servicios</h2>
   <ul>
-  <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-  <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-  <li> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-</ul>
-  </ContentMedia>
+    <li data-aos="fade-in" data-aos-delay="500"> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li data-aos="fade-in" data-aos-delay="500"> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li data-aos="fade-in" data-aos-delay="500"> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  </ul>
+</ContentMedia>
   <script>
     import AOS from 'aos';
     AOS.init();
   </script>
 </body>
   </html>
---
 
 <style>
   h2 {
-    font-size: 2em;
+    font-size: 2rem; /* text-2xl */
+    line-height: 1.25; /* leading-tight */
+  }
+
+  @media (min-width: 768px) {
+      h2 {
+          font-size: 2.25rem; /* text-4xl */
+          line-height: 1.5; /* leading-normal */
+      }
+  }
+
+  @media (min-width: 1024px) {
+      h2 {
+          font-size: 3.75rem; /* text-6xl */
+          line-height: 1.625; /* leading-relaxed */
+      }
   }
   ul {
     margin: 30px;
@@ -34,7 +48,7 @@ let img_path = "../../public/Resources/main-content2.svg"
     margin: 10px;
   }
   .media-c{
-    font-size: 45px;
+    font-size: 2rem;
     font-weight: 700; 
   }
   .custom-font-title{

@@ -2,8 +2,8 @@
 import 'aos/dist/aos.css'; 
 ---
 <body>
-<div data-aos="flip-left" data-aos-delay="500" class="flip-card lg:flip-card-lg">
-    <div data-aos="flip-left" data-aos-delay="500" class="flip-card-inner">
+<div data-aos="flip-left"  class="flip-card lg:flip-card-lg">
+    <div data-aos="flip-left"  class="flip-card-inner">
         <div   class="flip-card-front bg-white text-black">
             <slot data-aos="fade-right" name="front"></slot>
         </div>
@@ -81,13 +81,6 @@ import 'aos/dist/aos.css';
         }
     }
 
-    /* Media query para tarjetas grandes en pantallas grandes */
-    @media (min-width: 1024px) {
-        .lg\:flip-card-lg {
-            width: 450px;
-            height: 480px;
-        }
-    }
 
 </style>
 

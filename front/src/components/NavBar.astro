@@ -27,6 +27,10 @@
             border-radius: 10px;
         }
 
+        a{
+            transition: all ease-in-out .2s;
+        }
+
     </style>
 
 </head>
@@ -35,33 +39,32 @@
     <header class="pt-2.5 pb-2.5  bg-[#225b73]">
         <nav class="flex justify-between items-center w-[92%]  mx-auto">
             <div class="logo">
-                <img class="w-32 cursor-pointer" src="../../public/Resources/krea.png" alt="Logo Krea">
+                <a href="/">
+                    <img class="w-32 cursor-pointer" src="../../public/Resources/krea.png" alt="Logo Krea">
+                </a>
             </div>
             <div
                 class="nav-links duration-500 md:static absolute bg-[#225b73] text-white md:min-h-fit min-h-[50vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
                 <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                    
                     <li>
-                        <a class="hover:text-gray-300" href="/">Home</a> 
+                        <a class="hover:text-gray-300 cursor-pointer" href="/nosotros">Nosotros</a> 
                     </li>
 
                     <li>
-                        <a class="hover:text-gray-300" href="/nosotros">Nosotros</a> 
+                        <a class="hover:text-gray-300 cursor-pointer" href="/servicios">Servicios</a> 
                     </li>
 
                     <li>
-                        <a class="hover:text-gray-300" href="/servicios">Servicios</a> 
+                        <a class="hover:text-gray-300 cursor-pointer" href="/convocatorias">Convocatorias</a> 
                     </li>
 
                     <li>
-                        <a class="hover:text-gray-300" href="/convocatorias">Convocatorias</a> 
-                    </li>
-
-                    <li>
-                        <a class="hover:text-gray-300" href="#">Blog</a> 
+                        <a class="hover:text-gray-300 cursor-pointer" href="/blog">Blog</a> 
                     </li>
 
                     <li >
-                        <a  class=" font-bold hover:text-gray-500 text-[#41BBB1]" href="#">Contacto</a> 
+                        <a  class=" font-bold hover:text-[#67fff2] text-[#41BBB1] cursor-pointer" href="/contacto">Contacto</a> 
                     </li>
                 </ul>
             </div>
