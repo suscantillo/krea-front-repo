@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+        import AOS from 'aos';
+        AOS.init();
+    </script>
 
     <style>
         .bg {
@@ -293,6 +297,7 @@
             color: #41bbb1;
             text-align: center;
         }
+        
 
         .info-patternpad p {
             font-family: 'Raleway';
@@ -656,37 +661,38 @@
 
 <body class="font-[Raleway] ">
     <div class="bg ">
-            <div class="info">
+            <div class="info" data-aos="fade-up"
+            data-aos-anchor-placement="top-center">
                 <h1>Transformamos ideas en proyectos</h1>
             </div>
     </div>
 
     <div class="content">
-        <div class="content-info">
+        <div class="content-info" data-aos="fade-right">
             <ul>
-        <li><span>Especializados en la creación de modelos de negocio exitosos.</span></li>
-        <li><span>Dinamizamos los ecosistemas empresariales a través de la captación de recursos de cofinanciación.</span></li>
-        <li><span>Desarrollamos una metodología de búsqueda de recursos inteligentes.</span></li>
-    </ul>
+                <li><span>Especializados en la creación de modelos de negocio exitosos.</span></li>
+                <li><span>Dinamizamos los ecosistemas empresariales a través de la captación de recursos de cofinanciación.</span></li>
+                <li><span>Desarrollamos una metodología de búsqueda de recursos inteligentes.</span></li>
+            </ul>
         </div>
 
-        <div class="content-animation">
+        <div class="content-animation" data-aos="fade-left">
             <lottie-player src="https://lottie.host/722cc8f9-cfe8-47b2-becc-beaabf782814/uAHfmqW5ot.json" background="#ffffff" speed="1" style="width: 400px; height: 400px" loop autoplay direction="1" mode="normal"></lottie-player>
         </div>
     </div>
 
     <div class="content-estadisticas">
-        <div class="estadisticas">
+        <div class="estadisticas" data-aos="flip-left">
             <h1>+8</h1>
             <p>Años de experiencia</p>
         </div>
 
-        <div class="estadisticas">
+        <div class="estadisticas" data-aos="flip-left">
             <h1>90%</h1>
             <p>Ejecución</p>
         </div>
 
-        <div class="estadisticas">
+        <div class="estadisticas" data-aos="flip-left">
             <h1>+494</h1>
             <p>Mil millones de recursos aprobados</p>
         </div>
@@ -694,19 +700,19 @@
 
     <div class="patternpad">
         <div class="info-patternpad">
-            <p>Nuestra meta:</p>
-            <h1>Transformar la vida de miles de Colombianos</h1>
+            <p data-aos="fade-in">Nuestra meta:</p>
+            <h1 data-aos="zoom-in">Transformar la vida de miles de Colombianos</h1>
         </div>
     </div>
 
     <div class="cards-content">
         <div class="title-cards">
-            <h1>Lo que hacemos</h1>
+            <h1 data-aos="fade-in">Lo que hacemos</h1>
         </div>
 
         <div class="container__card">
 
-            <div class="card c1">
+            <div data-aos="flip-left" class="card c1">
                 <div class="icon">
                     <i class="fa-regular fa-lightbulb"></i>
                 </div>
@@ -717,7 +723,7 @@
                 </div>
             </div>
 
-            <div class="card c2">
+            <div data-aos="flip-left" class="card c2">
                 <div class="icon">
                     <i class="fa-solid fa-gears"></i>
                 </div>
@@ -728,7 +734,7 @@
                 </div>
             </div>
 
-            <div class="card c3">
+            <div data-aos="flip-left" class="card c3">
                 <div class="icon">
                     <i class="fa-solid fa-business-time"></i>
                 </div>
@@ -739,7 +745,7 @@
                 </div>
             </div>
 
-            <div class="card c4">
+            <div data-aos="flip-left" class="card c4">
                 <div class="icon">
                     <i class="fa-solid fa-square-check"></i>
                 </div>
@@ -761,7 +767,7 @@
                     <div class="divider"></div>
                 </div>
                 <div class="column title-column">
-                    <h1>Te apoyamos en la búsqueda de capital inteligente para el sector público y privado</h1>
+                    <h1 data-aos="fade-in">Te apoyamos en la búsqueda de capital inteligente para el sector público y privado</h1>
                 </div>
                 <div class="column divider-column inf">
                     <div class="divider"></div>
@@ -832,23 +838,67 @@
 
         <div class="content-estadisticas">
             <div class="estadisticas">
-                <h1>203</h1>
-                <p>Cooperantes</p>
+                <h1 class="num" data-val="203">000</h1>
+                <p data-aos="fade-in">Cooperantes</p>
             </div>
     
             <div class="estadisticas">
-                <h1>259</h1>
-                <p>Convocatorias</p>
+                <h1 class="num" data-val="259">000</h1>
+                <p data-aos="fade-in">Convocatorias</p>
             </div>
     
             <div class="estadisticas">
-                <h1>30</h1>
-                <p>Billones en recursos</p>
+                <h1 class="num" data-val="30">00</h1>
+                <p data-aos="fade-in">Billones en recursos</p>
             </div>
         </div>
 
     </div>
 
+    <script>
+        // Declaración de la variable al inicio del bloque de código
+        let valueDisplays = document.querySelectorAll(".num");
+
+        // Opciones para el Intersection Observer
+        let options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        // Función para manejar la intersección
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let valueDisplay = entry.target;
+                    let startValue = 0;
+                    let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+                    let duration = Math.floor(4000 / endValue); // Asumiendo un intervalo fijo de 4000ms
+                    let counter = setInterval(function() {
+                        startValue += 1;
+                        valueDisplay.textContent = startValue.toString();
+                        if (startValue === endValue) {
+                            clearInterval(counter);
+                        }
+                    }, duration);
+
+                    // Detener el observador una vez que la animación comienza
+                    observer.unobserve(valueDisplay);
+                }
+            });
+        }
+
+        // Crear y configurar el Intersection Observer
+        let observer = new IntersectionObserver(handleIntersection, options);
+
+        // Iniciar la observación de los elementos
+        valueDisplays.forEach(valueDisplay => {
+            observer.observe(valueDisplay);
+        });
+        
+    </script>
+
 </body>
+
 
 </html>
