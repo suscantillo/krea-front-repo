@@ -1,0 +1,122 @@
+---
+import plugin from "tailwindcss";
+import Separator from "./Separator.astro"
+const STRAPI_URL = 'http://localhost:1337'; 
+
+
+const { title }  = Astro.props;
+const { content } = Astro.props;
+let { publishedAt }  = Astro.props;
+const { featuredimage } = Astro.props;
+const { category } = Astro.props;
+const { author }= Astro.props;
+const { excerpt } = Astro.props;
+
+function getDate(date: string){
+    let newdate = date.match(/^\d{4}-\d{2}-\d{2}/);
+    return newdate[0]
+}
+publishedAt = getDate(publishedAt);
+
+
+
+
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .main-content {
+            max-width: 1200px;
+            margin: 3rem 6rem;
+        }
+        .grid {
+            display: flex;
+            flex-direction: column;
+        }
+        .category-tag-wrapper {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        .category-tag {
+            font-weight: 600;
+            display: inline-block;
+            border-radius: 100px;
+            background-color: #41bbb1;
+            padding: 0.5em 0.9em;
+            font-size: 0.9em;
+            line-height: 1.2;
+            color: white;
+            width: fit-content;
+        }
+
+        .date-tag {
+            margin-left: 10px;
+            font-weight: 600;
+            display: inline-block;
+            border-radius: 100px;
+            background-color: #225b73;;
+            padding: 0.5em 0.9em;
+            font-size: 0.9em;
+            line-height: 1.2;
+            color: white;
+            width: fit-content;
+        
+        }
+        
+        @media (min-width: 768px) {
+            .grid {
+                flex-direction: row;
+            }
+        }
+        .text-container, .img-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .img-container {
+            align-items: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <section class="main-content">
+        <div class="grid">
+            <div class="text-container">
+                <h1 class="text-4xl font-bold mb-4">{title}</h2>
+                <div class="category-tag-wrapper">
+                    <div class="category-tag">
+                        {category?.data?.attributes?.Name}
+                    </div>
+                    <div class="date-tag ">
+                        
+                    </div>
+                </div>
+               
+                <p class="text-gray-700 mb-4">
+                    {excerpt}
+                </p>
+            </div>
+            <div class="img-container">
+                <p>{featuredimage.data.attributes.url}</p>
+            
+            </div>
+        </div>
+    </section>
+    <Separator/>
+</body>
+</html>

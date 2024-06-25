@@ -1,0 +1,26 @@
+---
+import { Debug } from 'astro:components';
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import BlogPost from '../../components/BlogPost.astro'
+export async function getStaticPaths() {
+  const response = await fetch('http://localhost:1337/api/posts?populate=*');
+  const { data } = await response.json();
+  
+  return data.map((post) => ({
+    params: { slug: post.attributes.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, content, publishedAt, featuredimage, category, author, excerpt } = post.attributes;
+const main =  { title, content, publishedAt, featuredimage, category, author, excerpt }
+console.log(featuredimage.data.attributes.url)
+---
+
+<DefaultLayout>
+   <BlogPost title = {title} , publishedAt = {publishedAt},
+   feauredimage = {featuredimage}, category = {category},
+   author = {author}, excerpt = {excerpt}
+   ;></BlogPost>
+</DefaultLayout>
