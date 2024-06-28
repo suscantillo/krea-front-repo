@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: "https://cegallardo0405.github.io",
-  base: "/",
+  site: "https://suscantillo.github.io",
+  base: "/krea-front-repo",
 });
