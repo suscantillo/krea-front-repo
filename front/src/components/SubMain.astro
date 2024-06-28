@@ -8,11 +8,13 @@ let img_path = "../../public/Resources/main-content2.svg"
   <link rel="stylesheet" href="./Styles/GlobalCss.css"> 
 </head>
 <ContentMedia class="media-c">
-    <h2 class="ml-4 mb-4 custom-font-title" data-aos="fade-in" data-aos-delay="500">Servicios</h2>
-  <ul>
-    <li data-aos="fade-in" data-aos-delay="500"> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-    <li data-aos="fade-in" data-aos-delay="500"> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-    <li data-aos="fade-in" data-aos-delay="500"> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <h2 class="ml-4 custom-font-title" data-aos="fade-in" data-aos-delay="500">Servicios</h2>
+  <ul class="text-left pl-32">
+    <li data-aos="fade-in" data-aos-delay="500"> - Gestión de proyectos</li>
+    <li data-aos="fade-in" data-aos-delay="500"> - Búsqueda de recursos</li>
+    <li data-aos="fade-in" data-aos-delay="500"> - Gestión empresarial</li>
+    <li data-aos="fade-in" data-aos-delay="500"> - Desarrollo web</li>
+    <li data-aos="fade-in" data-aos-delay="500"> - Asesoría legal coorporativa</li>
   </ul>
 </ContentMedia>
   <script>
@@ -39,6 +41,12 @@ let img_path = "../../public/Resources/main-content2.svg"
       h2 {
           font-size: 3.75rem; /* text-6xl */
           line-height: 1.625; /* leading-relaxed */
+      }
+  }
+  @media (max-width: 1280px) {
+    ul {
+        text-align: center;
+        padding-left: 0;
       }
   }
   ul {
